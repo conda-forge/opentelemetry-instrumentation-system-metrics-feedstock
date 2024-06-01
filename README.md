@@ -143,5 +143,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@conda-forge/opentelemetry-api](https://github.com/conda-forge/opentelemetry-api/)
+* [@conda-forge/opentelemetry-instrumentation](https://github.com/conda-forge/opentelemetry-instrumentation/)
+* [@conda-forge/opentelemetry-sdk](https://github.com/conda-forge/opentelemetry-sdk/)
 * [@rxm7706](https://github.com/rxm7706/)
 

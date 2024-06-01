@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-instrumentation-system-metrics" %}
-{% set version = "0.45b0" %}
+{% set version = "0.46b0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_system_metrics-{{ version }}.tar.gz
-  sha256: 776ec5dd71d7de9bd499d2b561424a2be323a36b32c07c3d3983fcf4e03215e7
+  sha256: e7550259d25e4c5bbb12a837730e75ad436a46422e83b7a08234838552148b25
 
 build:
   noarch: python
@@ -20,11 +20,11 @@ requirements:
     - hatchling
     - pip
   run:
-    - opentelemetry-instrumentation ==0.45b0
+    - opentelemetry-instrumentation =={{ version }}
     - python >=3.7
-    - opentelemetry-api >=1.11,<2.dev0
-    - opentelemetry-sdk >=1.11,<2.dev0
-    - psutil >=5.9,<6.dev0
+    - opentelemetry-api >=1.25,<2.0
+    - opentelemetry-sdk >=1.25,<2.0
+    - psutil >=5.9,<6.0
 
 test:
   imports:
@@ -43,3 +43,6 @@ about:
 extra:
   recipe-maintainers:
     - rxm7706
+    - conda-forge/opentelemetry-instrumentation
+    - conda-forge/opentelemetry-api
+    - conda-forge/opentelemetry-sdk
