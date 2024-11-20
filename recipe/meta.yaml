@@ -1,13 +1,13 @@
 {% set name = "opentelemetry-instrumentation-system-metrics" %}
-{% set version = "0.48b0" %}
+{% set version = "0.49b2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_system_metrics-{{ version }}.tar.gz
-  sha256: 77e713d9fd024b5f7143c0c46c1a1114e41d04d900088774bcf7b6cd82ea6546
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_system_metrics-{{ version }}.tar.gz
+  sha256: 2ef4949c0c0f64e6b7437b8d23e0ee57245ab3d0d38501157bb93f4e4151207c
 
 build:
   noarch: python
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - opentelemetry-instrumentation ==0.48b0
-    - python >=3.7
+    - python >={{ python_min }}
+    - opentelemetry-instrumentation =={{ version }}
     - opentelemetry-api >=1.11,<2.dev0
     - opentelemetry-sdk >=1.25,<2.0
     - psutil >=5.9.0,<7
@@ -32,6 +32,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
