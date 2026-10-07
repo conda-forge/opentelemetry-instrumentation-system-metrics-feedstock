@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-instrumentation-system-metrics" %}
-{% set version = "0.66b0" %}
+{% set version = "0.66b1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_instrumentation_system_metrics-{{ version }}.tar.gz
-  sha256: 31a395c44078dd328adf8f2acdf6f76a5510341512cacdf9f9bb523d9a98d5c2
+  sha256: b0fccbc1aecf35c182431a035ec4809b8f9607eec692243cf70f23b3bda51231
 
 build:
   noarch: python
@@ -20,12 +20,12 @@ requirements:
     - hatchling
     - pip
   run:
-    - opentelemetry-semantic-conventions ==0.66b0
+    - opentelemetry-semantic-conventions ==0.66b1
     - python >={{ python_min }}
-    - opentelemetry-instrumentation ==0.66b0
-    - opentelemetry-api ~=1.11
+    - opentelemetry-instrumentation ==0.66b1
+    - opentelemetry-api >=1.11,<2.dev0
     - opentelemetry-sdk >=1.25,<2.0
-    - psutil >=5
+    - psutil >=5.9.0,<8
     # - opentelemetry-semantic-conventions ==0.63b0
 
 test:
